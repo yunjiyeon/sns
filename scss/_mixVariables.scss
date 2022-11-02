@@ -1,0 +1,15 @@
+$bg-color: #eee1d8;
+$main-color:  #ee8400;
+$gray1: #585858;
+$gray2: #b6b6b6;
+$gray3: rgba(0,0,0,.08);
+$opacityBlack: rgba(0,0,0,.2);
+$opacityBg: rgba(238, 225, 216, 0.45);
+
+
+// 스타일 여러개 있는 것
+@mixin set-box($height, $width: 100%, $border-radius:0) { // width, height 는 안 쓰면 0
+  height: $height;
+  width: $width;
+  border-radius: $border-radius;
+}

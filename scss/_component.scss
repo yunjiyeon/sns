@@ -1,0 +1,60 @@
+.preview {
+  display: flex;
+  padding: 16px;
+  position: relative;
+  .preview_column {
+    .preview_pic{
+      @include set-box(50px, 50px, 16px);
+      background-color: $main-color;
+      margin-right: 16px;
+      opacity: 0.7;
+    }
+    .preview_nick{
+      width: 50vw;
+      font-size: 0.8em;
+      margin-bottom: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .preview_msg{
+      width: 50vw;
+      font-size: 0.75em;
+      color: #747474;
+      
+      // 호환이 되지 않는 버전들이 많기 때문에 많이 사용하지는 않음
+      // 두 줄만 보이게 하기
+      display: -webkit-box;
+      word-wrap: break-word;
+      -webkit-line-clamp: 2; // 글자 수 제한
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+    }
+    .preview_time{
+      position: absolute;
+      top: 25px; right: 16px;
+      font-size: 0.7em;
+      color: $opacityBlack;
+    }
+  }
+}
+
+.bubble {
+  @include set-box(auto, 100%, 30px);
+  position: relative;
+  background-color: #fff;
+  box-shadow: 3px 3px 2px $bg-color;
+  padding: 12px 14px;
+  font-size: 0.8em;
+
+  &::before{
+    @include set-box(0px, 0px);
+    position: absolute; 
+    content: "";
+    top: 5px;
+    left: -2px;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+  }
+}

@@ -1,0 +1,17 @@
+.chats {
+  margin-left: 70px;
+}
+
+a.preview_wrap {
+  color: #222;
+  
+  &:first-child > .preview {
+    background-color: rgba(238, 225, 216,0.28);
+  }
+
+  .preview {
+    &:hover {
+      background: rgba(238, 225, 216,0.25);
+    }
+  }
+}

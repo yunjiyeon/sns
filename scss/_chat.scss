@@ -1,0 +1,93 @@
+.chat { 
+  @include set-box (100%, 100%);
+}
+
+.chat_screen {
+  background-color: $opacityBg;
+  height: calc(100% - 140px);
+  overflow: auto; // 넘쳐날때 스크롤이 생기고 안 넘치면 안 생김
+  .chat_screen_bar {
+    background-color: #f7f1ed;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .chat_nick {
+      font-size: 1em;
+      margin-top: 5px;
+    }
+    .chat_num {
+      margin-top: 10px;
+    }
+    .chat_screen_icon {
+      margin-right: 15px;
+      span {
+        height: 28px;
+        width: 28px;
+        border-radius: 18px;
+        display: inline-block;
+        line-height: 28px;
+        text-align: center;
+        cursor: pointer;
+        color: $gray1;
+        &:hover {
+          background-color: $bg-color;
+        }
+      }
+      
+    }
+  }
+}
+.bubble_container {
+  padding-top: 20px;
+}
+.bubble_wrap {
+  display: flex;
+  .bubble_content {
+    width: 80%;
+    max-width: 700px;
+  }
+  .bubble_time {
+    font-size: 0.7em;
+    display: flex;
+    align-items: end;
+    padding-left: 5px;
+  }
+}
+
+.chat_form {
+  background-color: #fff;
+  height: 140px;
+  padding: 15px;
+  .chat_form_msg {
+    @include set-box (75px, 100%);
+    resize: none;
+    border: none;
+    outline: none; // focus가 주어졌을 때 보이는 선
+    margin-bottom: 8px;
+  }
+  .chat_form_util {
+    display: flex;
+    justify-content: space-between;
+    .chat_form_util_plugin{
+      cursor: pointer;
+      i {
+        margin-right: 7px;
+        color: $gray2;
+        line-height: 35px;
+      }
+    }
+    .chat_form_util_submit{
+      .chat_form_btn {
+        cursor: pointer;
+        @include set-box (35px, 70px, 6px);
+        border: none;
+        color: $gray1;
+        background-color: $opacityBg;
+      }
+    }
+  }
+}
